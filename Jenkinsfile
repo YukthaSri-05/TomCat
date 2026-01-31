@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
 
         stage('Clone') {
             steps {
-                git ''
+                git branch: 'master',
+                    url: 'https://github.com/YukthaSri-05/TomCat.git'
             }
         }
 
